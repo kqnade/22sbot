@@ -1,0 +1,9 @@
+node_modules/
+package-lock.json
+config.json
+/config.dev.json
+yarn.lock
+/.idea/
+/CCConfig.json
+/.fleet/settings.json
+/timetable/timetables.json
