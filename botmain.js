@@ -68,6 +68,7 @@ client.on('messageCreate', message => {
 })
 
 cron.schedule('*/1  * * * *', async () => {
+    //ダッシュボードの更新
     const data = JSON.parse(fs.readFileSync(configPath, 'utf8'))
     const dashboardGuild = client.guilds.cache.get(data.dashboard[2]); /*ギルド情報取得*/
     const channel = client.channels.cache.get(data.dashboard[1]); /*チャンネル情報取得*/
@@ -76,7 +77,7 @@ cron.schedule('*/1  * * * *', async () => {
         .then((dashboard) => {
             const newEmbed = new EmbedBuilder()
                 .setColor(0x00A0EA)
-                .setTitle('NIT,Kisarazu College 22s ダッシュボード')
+                .setTitle('NIT,Kushiro College 22s ダッシュボード')
                 .setAuthor({
                     name: "釧路高専22s統合管理BOT",
                     iconURL: 'https://cdn.discordapp.com/attachments/1094104877266894868/1094124874844356608/Orange_Modern_Logo.png',
@@ -84,32 +85,44 @@ cron.schedule('*/1  * * * *', async () => {
                 })
                 .addFields(field)
                 .setTimestamp()
-                .setFooter({text: 'Developed by NITKC22s server Admin'});
+                .setFooter({text: 'Developed by NITKC22s'});
 
             dashboard.edit({embeds: [newEmbed]});
+            console.log("dashboard updated");
         })
         .catch((error) => {
             console.error(`メッセージID ${messageId} のダッシュボードを取得できませんでした: ${error}`);
         });
-});
 
-cron.schedule('*/1  * * * *', async () => {
+    //時間割の送信
     let dayOfWeek = new Date().getDay() + 1;
-    //timetable == trueのとき
-    let timetable = JSON.parse(await fs.promises.readFile(config.configPath, "utf-8")).timetable
-    if (timetable === true) {
-        (await (client.channels.cache.get(config.M) ?? await client.channels.fetch(config.M))
-            .send({ embeds: [timetableBuilder(Classes.M, dayOfWeek)] }));
-        (await (client.channels.cache.get(config.E) ?? await client.channels.fetch(config.E))
-            .send({ embeds: [timetableBuilder(Classes.E, dayOfWeek)] }));
-        (await (client.channels.cache.get(config.D) ?? await client.channels.fetch(config.D))
-            .send({ embeds: [timetableBuilder(Classes.D, dayOfWeek)] }));
-        (await (client.channels.cache.get(config.J) ?? await client.channels.fetch(config.J))
-            .send({ embeds: [timetableBuilder(Classes.J, dayOfWeek)] }));
-        (await (client.channels.cache.get(config.C) ?? await client.channels.fetch(config.C))
-            .send({ embeds: [timetableBuilder(Classes.C, dayOfWeek)] }));
+    console.log(data.timetable);
+    if (data.timetable === true) {
+        const channelm = client.channels.cache.get(data.Mchannel);
+        const embedm = timetableBuilder(Classes.M, dayOfWeek);
+        await channelm.send({ embeds: [embedm] });
+
+        const channele = client.channels.cache.get(data.Echannel);
+        const embede = timetableBuilder(Classes.E, dayOfWeek);
+        await channele.send({ embeds: [embede] });
+
+        const channeld = client.channels.cache.get(data.Dchannel);
+        const embedd = timetableBuilder(Classes.D, dayOfWeek);
+        await channeld.send({ embeds: [embedd] });
+
+        const channelj = client.channels.cache.get(data.Jchannel);
+        const embedj = timetableBuilder(Classes.J, dayOfWeek);
+        await channelj.send({ embeds: [embedj] });
+
+        const channela = client.channels.cache.get(data.Achannel);
+        const embeda = timetableBuilder(Classes.A, dayOfWeek);
+        await channela.send({ embeds: [embeda] });
+
+        console.log("timetable sent");
+    } else {
+        console.log("timetable not sent");
     }
-    console.log("timetable sent");
+    
 });
 
 

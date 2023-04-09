@@ -8,11 +8,6 @@ module.exports = function timetableBuilder(classValue, dayOfWeek) {
     const classTimetables = timetableData[classValue];
     const timetable = classTimetables.timetables[dayOfWeek - 1];
 
-
-    timetable.forEach(({ subject, time, teacher, room }) => {
-        console.log(`${time}時限`, `${subject} (${teacher})\n${room}`);
-    });
-
     if (!classTimetables) {
         return new EmbedBuilder()
             .setColor(0x0099FF)
