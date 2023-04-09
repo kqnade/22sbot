@@ -15,10 +15,10 @@ module.exports = [
                     .setDescription('分野を指定します')
                     .setRequired(true)
                     .addChoices(
-                        { name: 'M-機械工分野', value: 'M' },
-                        { name: 'E-電気工分野', value: 'E' },
-                        { name: 'D-電子工分野', value: 'D' },
-                        { name: 'J-情報工分野', value: 'J' },
+                        { name: 'M-機械工学分野', value: 'M' },
+                        { name: 'E-電気工学分野', value: 'E' },
+                        { name: 'D-電子工学分野', value: 'D' },
+                        { name: 'J-情報工学分野', value: 'J' },
                         { name: 'A-建築学分野', value: 'A' },
                     )
             )
