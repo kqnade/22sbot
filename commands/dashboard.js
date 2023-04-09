@@ -15,15 +15,15 @@ module.exports =
                 const field = await dashboard.generation(interaction.guild)
                 const embed = new EmbedBuilder()
                     .setColor(0x00A0EA)
-                    .setTitle('NIT,Kisarazu College 22s ダッシュボード')
+                    .setTitle('NIT,Kushiro College 22s ダッシュボード')
                     .setAuthor({
-                        name: "木更津22s統合管理BOT",
-                        iconURL: 'https://media.discordapp.net/attachments/1004598980929404960/1039920326903087104/nitkc22io-1.png',
-                        url: 'https://github.com/NITKC22s/bot-main'
+                        name: "釧路高専22s統合管理BOT",
+                        iconURL: 'https://cdn.discordapp.com/attachments/1094104877266894868/1094124874844356608/Orange_Modern_Logo.png',
+                        url: 'https://github.com/kqnade/22sbot'
                     })
                     .addFields(field)
                     .setTimestamp()
-                    .setFooter({text: 'Developed by NITKC22s server Admin'});
+                    .setFooter({text: 'Developed by NITKC22s'});
                 await interaction.reply({ embeds: [embed] });
             },
         },

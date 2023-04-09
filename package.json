@@ -8,7 +8,8 @@
     "dotenv": "^16.0.2",
     "enquirer": "^2.3.6",
     "moment": "^2.29.4",
-    "node-cron": "^3.0.2"
+    "node-cron": "^3.0.2",
+    "node-fetch": "^3.3.1"
   },
   "name": "nitkc-main",
   "description": "",
@@ -23,14 +24,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NITKC22s/bot-main.git"
+    "url": "git+https://github.com/kqnade/22sbot"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/NITKC22s/bot-main/issues"
+    "url": "https://github.com/github.com/kqnade/22sbot/issues"
   },
-  "homepage": "https://github.com/NITKC22s/bot-main#readme",
+  "homepage": "https://github.com/github.com/kqnade/22sbot#readme",
   "devDependencies": {
     "cross-env": "^7.0.3"
   }

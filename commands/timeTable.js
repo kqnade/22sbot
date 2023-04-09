@@ -1,4 +1,5 @@
-const { SlashCommandBuilder} = require('discord.js')
+const { SlashCommandBuilder } = require('discord.js')
+
 const  timetableBuilder  = require('../timetable/timetableUtils')
 const Classes = require('../timetable/timetables.json')
 const fs = require('fs');
@@ -15,10 +16,10 @@ module.exports = [
                     .setRequired(true)
                     .addChoices(
                         { name: 'M-機械工学科', value: 'M' },
-                        { name: 'E-電気電子工学科', value: 'E' },
-                        { name: 'D-電子制御工学科', value: 'D' },
+                        { name: 'E-電気工学科', value: 'E' },
+                        { name: 'D-電子工学科', value: 'D' },
                         { name: 'J-情報工学科', value: 'J' },
-                        { name: 'C-環境都市工学科', value: 'C' },
+                        { name: 'A-建築デザイン科', value: 'A' },
                     )
             )
             .addStringOption(option =>
@@ -58,8 +59,9 @@ module.exports = [
                     dayOfWeek = 1;
                 }
             }
+            
 
-            const embed = timetableBuilder(Classes[interaction.options.getString('学科')],dayOfWeek);
+            const embed = timetableBuilder(interaction.options.getString('学科'),dayOfWeek);
 
 
             await interaction.reply({ embeds: [embed] });

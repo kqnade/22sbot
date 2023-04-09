@@ -1,17 +1,13 @@
 const fs = require("fs");
 const {configPath} = require("../environmentConfig");
 const axios = require('axios');
+const { max } = require("moment/moment");
 
 
-/*天気取得*/
 async function getWeather() {
-    try {
-        const response = await axios.get('https://weather.tsukumijima.net/api/forecast/city/120010');
-        return response.data;
-    } catch (error) {
-        console.error("天気を取得できませんでした");
-        return null;
-    }
+    const response = await fetch('https://weather.tsukumijima.net/api/forecast/city/015010');
+    const data = await response.json();
+    return data;
 }
 
 /*日数カウント*/
@@ -120,33 +116,29 @@ exports.generation = async function func(guild) {
     const weatherData = await getWeather();
     let weather;
     if (!weatherData) {
-        weather = "天気を取得できませんでした"
-    }
-    else{
-        let todayMax;
-        let todayMin;
-        if (weatherData.forecasts[0].date === data.weather[0][0]) {
-            todayMax = data.weather[0][1];
-            todayMin = data.weather[0][2];
-        } else {
-            data.weather[0] = data.weather[1];
+        weather = "天気情報を取得できませんでした。";
+    } else {
+        const today = weatherData.forecasts[0];
+        const tomorrow = weatherData.forecasts[1];
+        
+        const now = today.detail.weather || '--';
+        const todayMax = today.temperature.max.celsius || '--';
+        const todayMin = today.temperature.min.celsius || '--';
+        const todayWeather = today.telop || '--';
+        const todayRain06 = today.chanceOfRain.T00_06 || '--';
+        const todayRain612 = today.chanceOfRain.T06_12 || '--';
+        const todayRain1218 = today.chanceOfRain.T12_18 || '--';
+        const todayRain1824 = today.chanceOfRain.T18_24 || '--';
 
-            if (weatherData.forecasts[0].date === data.weather[0][0]) {
-                todayMax = data.weather[0][1];
-                todayMin = data.weather[0][2];
-            } else {
-                todayMax = `---`;
-                todayMin = `---`;
-            }
-        }
+        const tomorrowMax = tomorrow.temperature.max.celsius || '--';
+        const tomorrowMin = tomorrow.temperature.min.celsius || '--';
+        const tomorrowWeather = tomorrow.telop || '--';
+        const tomorrowRain06 = tomorrow.chanceOfRain.T00_06 || '--';
+        const tomorrowRain612 = tomorrow.chanceOfRain.T06_12 || '--';
+        const tomorrowRain1218 = tomorrow.chanceOfRain.T12_18 || '--';
+        const tomorrowRain1824 = tomorrow.chanceOfRain.T18_24 || '--';
 
-        data.weather[1] = [weatherData.forecasts[1].date, weatherData.forecasts[1].temperature.max.celsius ?? `---`, weatherData.forecasts[1].temperature.min.celsius ?? `---`];
-
-        const min = [weatherData.forecasts[0].temperature.min.celsius ?? todayMin, weatherData.forecasts[1].temperature.min.celsius ?? `---`]
-        const max = [weatherData.forecasts[0].temperature.max.celsius ?? todayMax, weatherData.forecasts[1].temperature.max.celsius ?? `---`]
-
-        weather = `${weatherData.forecasts[0].dateLabel}：${weatherData.forecasts[0].telop} 最高気温：${max[0]}°C 最低気温：${min[0]}°C\n${weatherData.forecasts[1].dateLabel}：${weatherData.forecasts[1].telop} 最高気温：${max[1]}°C 最低気温：${min[1]}°C\n\n発表時刻：${weatherData.publicTimeFormatted} `;
-
+        weather = `今日の天気：${todayWeather}\n最高気温：${todayMax}℃ 最低気温：${todayMin}℃ \n降水確率(6時間毎)：${todayRain06}% / ${todayRain612}% / ${todayRain1218} / ${todayRain1824}\n\n明日の天気：${tomorrowWeather}\n最高気温：${tomorrowMax}℃ 最低気温：${tomorrowMin}℃ \n降水確率(6時間毎)：${tomorrowRain06} / ${tomorrowRain612} / ${tomorrowRain1218} / ${tomorrowRain1824}\n\n発表時刻：${weatherData.publicTimeFormatted}`;
     }
     fs.writeFileSync(configPath, JSON.stringify(data, null, "\t"))
     return [
@@ -159,10 +151,6 @@ exports.generation = async function func(guild) {
             value: `\`\`\`参加人数${user}人　/　現在オンライン${online}人\`\`\``,
         },
         {
-            name: 'BOT台数',
-            value: `\`\`\`導入台数${guild.memberCount - user}台 / 稼働中${botOnline}台\`\`\``,
-        },
-        {
             name: '次の定期テスト',
             value: `\`\`\`${test}\`\`\``,
         },
@@ -172,7 +160,7 @@ exports.generation = async function func(guild) {
 
         },
         {
-            name: '千葉の天気(Powered by 気象庁)',
+            name: '釧路の天気(Powered by 気象庁)',
             value: `\`\`\`${weather}\`\`\``,
 
         }
