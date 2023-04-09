@@ -1,0 +1,665 @@
+{
+"M": {
+    "name": "機械工学分野",
+    "timetables": [
+        [
+            {
+                "subject": "保健体育",
+                "time": "1, 2",
+                "teacher": "三島",
+                "room": "体育館"
+            },
+            {
+                "subject": "歴史・地理総合",
+                "time": "3, 4",
+                "teacher": "瀧川",
+                "room": "HR教室"
+            },
+            {
+                "subject": "創造工学基礎演習",
+                "time": "5, 6",
+                "teacher": "柳川・土江田・赤堀",
+                "room": "情報処理実験室・ラボ・情報基礎実験室・実習工場"
+            },
+            {
+                "subject": "HR",
+                "time": "7",
+                "teacher": "柳川",
+                "room": "HR教室"
+            }
+        ],
+        [
+            {
+                "subject": "機械設計製図",
+                "time": "1, 2",
+                "teacher": "前田",
+                "room": "HR教室・機械製図室"
+            },
+            {
+                "subject": "創造工学基礎演習",
+                "time": "3, 4",
+                "teacher": "柳川・土江田・赤堀",
+                "room": "情報処理実験室・ラボ・情報基礎実験室・実習工場"
+            },
+            {
+                "subject": "数学A",
+                "time": "5, 6",
+                "teacher": "宮毛",
+                "room": "大講義室"
+            },
+            {
+                "subject": "SSL物理",
+                "time": "4",
+                "teacher": "小久保・浦家・松崎・梅津・佐藤潤",
+                "room": "応用物理実験室"
+            }
+        ],
+        [
+            {
+                "subject": "物理A",
+                "time": "1, 2",
+                "teacher": "梅津",
+                "room": "HR教室"
+            },
+            {
+                "subject": "国語",
+                "time": "3, 4",
+                "teacher": "館下",
+                "room": "大講義室"
+            },
+            {
+                "subject": "英語",
+                "time": "5, 6",
+                "teacher": "片岡",
+                "room": "大講義室"
+            },
+            {
+                "subject": "工業力学",
+                "time": "7, 8",
+                "teacher": "渡邊聖",
+                "room": "機械製図室"
+            }
+        ],
+        [
+            {
+                "subject": "英語",
+                "time": "1, 2",
+                "teacher": "林幸",
+                "room": "ラボA"
+            },
+            {
+                "subject": "数学A",
+                "time": "3, 4",
+                "teacher": "宮毛",
+                "room": "大講義室"
+            },
+            {
+                "subject": "国語",
+                "time": "5, 6",
+                "teacher": "館下",
+                "room": "大講義室"
+            },
+            {
+                "subject": "物理B",
+                "time": "7, 8",
+                "teacher": "小久保",
+                "room": "HR教室"
+            },
+            {
+                "subject": "特進数学",
+                "time": "9, 10",
+                "teacher": "小谷恭",
+                "room": "ラボE"
+            }
+        ],
+        [
+            {
+                "subject": "化学",
+                "time": "1, 2",
+                "teacher": "佐藤潤",
+                "room": "HR教室"
+            },
+            {
+                "subject": "数学B",
+                "time": "3, 4",
+                "teacher": "上床",
+                "room": "大講義室"
+            },
+            {
+                "subject": "SSL数学",
+                "time": "9, 10",
+                "teacher": "小谷恭",
+                "room": "ラボA"
+            }
+        ]
+    ]
+},
+"D": {
+        "name": "電子工学分野",
+        "timetables": [
+            [
+                {
+                    "subject": "電気回路1b",
+                    "time": "1, 2",
+                    "teacher": "浅水",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "歴史・地理総合",
+                    "time": "3, 4",
+                    "teacher": "瀧川",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "化学",
+                    "time": "5, 6",
+                    "teacher": "佐藤潤",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "HR",
+                    "time": "7",
+                    "teacher": "大前",
+                    "room": "HR教室"
+                }
+            ],
+            [
+                {
+                    "subject": "電子機器実習",
+                    "time": "1, 2",
+                    "teacher": "松本・渡邉駿",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "物理A",
+                    "time": "3, 4",
+                    "teacher": "梅津",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "数学A",
+                    "time": "5, 6",
+                    "teacher": "宮毛",
+                    "room": "大講義室"
+                },
+                {
+                    "subject": "SSL物理",
+                    "time": "7, 8",
+                    "teacher": "小久保・浦家・松崎・梅津・佐藤潤",
+                    "room": "応用物理実験室"
+                }
+            ],
+            [
+                {
+                    "subject": "物理B",
+                    "time": "1, 2",
+                    "teacher": "小久保",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "国語",
+                    "time": "3, 4",
+                    "teacher": "館下",
+                    "room": "大講義室"
+                },
+                {
+                    "subject": "英語",
+                    "time": "5, 6",
+                    "teacher": "片岡",
+                    "room": "大講義室"
+                }
+            ],
+            [
+                {
+                    "subject": "英語",
+                    "time": "1, 2",
+                    "teacher": "林幸",
+                    "room": "ラボA"
+                },
+                {
+                    "subject": "数学A",
+                    "time": "3, 4",
+                    "teacher": "宮毛",
+                    "room": "大講義室"
+                },
+                {
+                    "subject": "国語",
+                    "time": "5, 6",
+                    "teacher": "館下",
+                    "room": "大講義室"
+                }
+            ],
+            [
+                {
+                    "subject": "保健体育",
+                    "time": "1, 2",
+                    "teacher": "三島",
+                    "room": "体育館"
+                },
+                {
+                    "subject": "数学B",
+                    "time": "3, 4",
+                    "teacher": "上床",
+                    "room": "大講義室"
+                },
+                {
+                    "subject": "電気回路基礎",
+                    "time": "5, 6",
+                    "teacher": "山形",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "SSL数学",
+                    "time": "4",
+                    "teacher": "小谷恭",
+                    "room": "ラボA"
+                }
+            ]
+        ]
+    },      
+    "E": {
+        "name": "電気工学科",
+        "timetables": [
+            [
+                {
+                    "subject": "情報数学1",
+                    "time": "1",
+                    "teacher": "本間・中島",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "保健体育",
+                    "time": "2",
+                    "teacher": "舘岡",
+                    "room": "体育館"
+                },
+                {
+                    "subject": "創造工学基礎演習",
+                    "time": "3",
+                    "teacher": "柳川・土江田・赤堀",
+                    "room": "情報処理実験室・ラボ・情報基礎実験室・実習工場"
+                },
+                {
+                    "subject": "HR",
+                    "time": "4",
+                    "teacher": "柳川",
+                    "room": "HR教室"
+                }
+            ],
+            [
+                {
+                    "subject": "英語",
+                    "time": "1",
+                    "teacher": "林幸",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "創造工学基礎演習",
+                    "time": "2",
+                    "teacher": "柳川・土江田・赤堀",
+                    "room": "情報処理実験室・ラボ・情報基礎実験室・実習工場"
+                },
+                {
+                    "subject": "数学B",
+                    "time": "3",
+                    "teacher": "村上",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "SSL物理",
+                    "time": "4",
+                    "teacher": "小久保・浦家・松崎・梅津・佐藤潤",
+                    "room": "応用物理実験室"
+                }
+            ],
+            [
+                {
+                    "subject": "国語",
+                    "time": "1",
+                    "teacher": "館下",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "英語",
+                    "time": "2",
+                    "teacher": "片岡",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "数学A",
+                    "time": "3",
+                    "teacher": "山崎",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "物理B",
+                    "time": "4",
+                    "teacher": "小久保",
+                    "room": "HR教室"
+                }
+            ],
+            [
+                {
+                    "subject": "UNIX基礎",
+                    "time": "1",
+                    "teacher": "土江田・林岳",
+                    "room": "情報処理実験室"
+                },
+                {
+                    "subject": "数学A",
+                    "time": "2",
+                    "teacher": "山崎",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "歴史・地理総合",
+                    "time": "3",
+                    "teacher": "瀧川",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "国語",
+                    "time": "4",
+                    "teacher": "館下",
+                    "room": "HR教室"
+                }
+            ],
+            [
+                {
+                    "subject": "物理A",
+                    "time": "1",
+                    "teacher": "松崎",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "化学",
+                    "time": "2",
+                    "teacher": "佐藤潤",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "プログラミング言語1",
+                    "time": "3",
+                    "teacher": "高橋晃・鈴木未",
+                    "room": "情報処理実験室"
+                },
+                {
+                    "subject": "SSL数学",
+                    "time": "4",
+                    "teacher": "小谷恭",
+                    "room": "ラボA"
+                }
+            ]
+        ]
+    },
+    "J": {
+        "name": "情報工学科",
+        "timetables": [
+            [
+                {
+                    "subject": "情報数学1",
+                    "time": "1",
+                    "teacher": "本間・中島",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "保健体育",
+                    "time": "2",
+                    "teacher": "舘岡",
+                    "room": "体育館"
+                },
+                {
+                    "subject": "創造工学基礎演習",
+                    "time": "3",
+                    "teacher": "柳川・土江田・赤堀",
+                    "room": "情報処理実験室・ラボ・情報基礎実験室・実習工場"
+                },
+                {
+                    "subject": "HR",
+                    "time": "4",
+                    "teacher": "柳川",
+                    "room": "HR教室"
+                }
+            ],
+            [
+                {
+                    "subject": "英語",
+                    "time": "1",
+                    "teacher": "林幸",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "創造工学基礎演習",
+                    "time": "2",
+                    "teacher": "柳川・土江田・赤堀",
+                    "room": "情報処理実験室・ラボ・情報基礎実験室・実習工場"
+                },
+                {
+                    "subject": "数学B",
+                    "time": "3",
+                    "teacher": "村上",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "SSL物理",
+                    "time": "4",
+                    "teacher": "小久保・浦家・松崎・梅津・佐藤潤",
+                    "room": "応用物理実験室"
+                }
+            ],
+            [
+                {
+                    "subject": "国語",
+                    "time": "1",
+                    "teacher": "館下",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "英語",
+                    "time": "2",
+                    "teacher": "片岡",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "数学A",
+                    "time": "3",
+                    "teacher": "山崎",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "物理B",
+                    "time": "4",
+                    "teacher": "小久保",
+                    "room": "HR教室"
+                }
+            ],
+            [
+                {
+                    "subject": "UNIX基礎",
+                    "time": "1",
+                    "teacher": "土江田・林岳",
+                    "room": "情報処理実験室"
+                },
+                {
+                    "subject": "数学A",
+                    "time": "2",
+                    "teacher": "山崎",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "歴史・地理総合",
+                    "time": "3",
+                    "teacher": "瀧川",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "国語",
+                    "time": "4",
+                    "teacher": "館下",
+                    "room": "HR教室"
+                }
+            ],
+            [
+                {
+                    "subject": "物理A",
+                    "time": "1",
+                    "teacher": "松崎",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "化学",
+                    "time": "2",
+                    "teacher": "佐藤潤",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "プログラミング言語1",
+                    "time": "3",
+                    "teacher": "高橋晃・鈴木未",
+                    "room": "情報処理実験室"
+                },
+                {
+                    "subject": "SSL数学",
+                    "time": "4",
+                    "teacher": "小谷恭",
+                    "room": "ラボA"
+                }
+            ]
+        ]
+    },
+    "A": {
+        "name": "建築デザイン学科",
+        "timetables": [
+            [
+                {
+                    "subject": "情報数学1",
+                    "time": "1",
+                    "teacher": "本間・中島",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "保健体育",
+                    "time": "2",
+                    "teacher": "舘岡",
+                    "room": "体育館"
+                },
+                {
+                    "subject": "創造工学基礎演習",
+                    "time": "3",
+                    "teacher": "柳川・土江田・赤堀",
+                    "room": "情報処理実験室・ラボ・情報基礎実験室・実習工場"
+                },
+                {
+                    "subject": "HR",
+                    "time": "4",
+                    "teacher": "柳川",
+                    "room": "HR教室"
+                }
+            ],
+            [
+                {
+                    "subject": "英語",
+                    "time": "1",
+                    "teacher": "林幸",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "創造工学基礎演習",
+                    "time": "2",
+                    "teacher": "柳川・土江田・赤堀",
+                    "room": "情報処理実験室・ラボ・情報基礎実験室・実習工場"
+                },
+                {
+                    "subject": "数学B",
+                    "time": "3",
+                    "teacher": "村上",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "SSL物理",
+                    "time": "4",
+                    "teacher": "小久保・浦家・松崎・梅津・佐藤潤",
+                    "room": "応用物理実験室"
+                }
+            ],
+            [
+                {
+                    "subject": "国語",
+                    "time": "1",
+                    "teacher": "館下",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "英語",
+                    "time": "2",
+                    "teacher": "片岡",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "数学A",
+                    "time": "3",
+                    "teacher": "山崎",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "物理B",
+                    "time": "4",
+                    "teacher": "小久保",
+                    "room": "HR教室"
+                }
+            ],
+            [
+                {
+                    "subject": "UNIX基礎",
+                    "time": "1",
+                    "teacher": "土江田・林岳",
+                    "room": "情報処理実験室"
+                },
+                {
+                    "subject": "数学A",
+                    "time": "2",
+                    "teacher": "山崎",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "歴史・地理総合",
+                    "time": "3",
+                    "teacher": "瀧川",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "国語",
+                    "time": "4",
+                    "teacher": "館下",
+                    "room": "HR教室"
+                }
+            ],
+            [
+                {
+                    "subject": "物理A",
+                    "time": "1",
+                    "teacher": "松崎",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "化学",
+                    "time": "2",
+                    "teacher": "佐藤潤",
+                    "room": "HR教室"
+                },
+                {
+                    "subject": "プログラミング言語1",
+                    "time": "3",
+                    "teacher": "高橋晃・鈴木未",
+                    "room": "情報処理実験室"
+                },
+                {
+                    "subject": "SSL数学",
+                    "time": "4",
+                    "teacher": "小谷恭",
+                    "room": "ラボA"
+                }
+            ]
+        ]
+    }
+}
