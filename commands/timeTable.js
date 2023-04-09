@@ -19,7 +19,7 @@ module.exports = [
                         { name: 'E-電気工分野', value: 'E' },
                         { name: 'D-電子工分野', value: 'D' },
                         { name: 'J-情報工分野', value: 'J' },
-                        { name: 'A-建築デザイン科', value: 'A' },
+                        { name: 'A-建築学分野', value: 'A' },
                     )
             )
             .addStringOption(option =>
