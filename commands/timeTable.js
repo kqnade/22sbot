@@ -1,25 +1,24 @@
 const { SlashCommandBuilder } = require('discord.js')
 
 const  timetableBuilder  = require('../timetable/timetableUtils')
-const Classes = require('../timetable/timetables.json')
 const fs = require('fs');
 const {configPath}=require("../environmentConfig")
 module.exports = [
     {
         data: new SlashCommandBuilder()
             .setName('timetable')
-            .setDescription('指定した学科・曜日の時間割を送信します')
+            .setDescription('指定した分野・曜日の時間割を送信します')
             .addStringOption(option =>
                 option
-                    .setName('学科')
-                    .setDescription('学科を指定します')
+                    .setName('分野')
+                    .setDescription('分野を指定します')
                     .setRequired(true)
                     .addChoices(
-                        { name: 'M-機械工学科', value: 'M' },
-                        { name: 'E-電気工学科', value: 'E' },
-                        { name: 'D-電子工学科', value: 'D' },
-                        { name: 'J-情報工学科', value: 'J' },
-                        { name: 'A-建築デザイン科', value: 'A' },
+                        { name: 'M-機械工学分野', value: 'M' },
+                        { name: 'E-電気工学分野', value: 'E' },
+                        { name: 'D-電子工学分野', value: 'D' },
+                        { name: 'J-情報工学分野', value: 'J' },
+                        { name: 'A-建築学分野', value: 'A' },
                     )
             )
             .addStringOption(option =>
@@ -38,6 +37,9 @@ module.exports = [
 
         async execute(interaction) {
 
+            // get strings from options 分野
+            const bunya = interaction.options.getString('分野');
+            // get strings from options 曜日
             let dt = new Date();
             let dayOfWeek = dt.getDay();
             let hours = dt.getHours();
@@ -60,8 +62,9 @@ module.exports = [
                 }
             }
             
-
-            const embed = timetableBuilder(interaction.options.getString('学科'),dayOfWeek);
+            // make timetable embed with timetableBuilder
+            
+            const embed = timetableBuilder(bunya, dayOfWeek);
 
 
             await interaction.reply({ embeds: [embed] });
