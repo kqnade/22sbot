@@ -49,7 +49,7 @@
             },
             {
                 "subject": "SSL物理",
-                "time": "4",
+                "time": "7, 8",
                 "teacher": "小久保・浦家・松崎・梅津・佐藤潤",
                 "room": "応用物理実験室"
             }
@@ -250,7 +250,7 @@
                 },
                 {
                     "subject": "SSL数学",
-                    "time": "4",
+                    "time": "7, 8",
                     "teacher": "小谷恭",
                     "room": "ラボA"
                 }
@@ -373,7 +373,7 @@
                 },
                 {
                     "subject": "SSL数学",
-                    "time": "4",
+                    "time": "7, 8",
                     "teacher": "小谷恭",
                     "room": "ラボA"
                 }
@@ -386,25 +386,25 @@
             [
                 {
                     "subject": "情報数学1",
-                    "time": "1",
+                    "time": "1, 2",
                     "teacher": "本間・中島",
                     "room": "HR教室"
                 },
                 {
                     "subject": "保健体育",
-                    "time": "2",
+                    "time": "3, 4",
                     "teacher": "舘岡",
                     "room": "体育館"
                 },
                 {
                     "subject": "創造工学基礎演習",
-                    "time": "3",
+                    "time": "5, 6",
                     "teacher": "柳川・土江田・赤堀",
                     "room": "情報処理実験室・ラボ・情報基礎実験室・実習工場"
                 },
                 {
                     "subject": "HR",
-                    "time": "4",
+                    "time": "7",
                     "teacher": "柳川",
                     "room": "HR教室"
                 }
@@ -412,25 +412,25 @@
             [
                 {
                     "subject": "英語",
-                    "time": "1",
+                    "time": "1, 2",
                     "teacher": "林幸",
                     "room": "HR教室"
                 },
                 {
                     "subject": "創造工学基礎演習",
-                    "time": "2",
+                    "time": "3, 4",
                     "teacher": "柳川・土江田・赤堀",
                     "room": "情報処理実験室・ラボ・情報基礎実験室・実習工場"
                 },
                 {
                     "subject": "数学B",
-                    "time": "3",
+                    "time": "5, 6",
                     "teacher": "村上",
                     "room": "HR教室"
                 },
                 {
                     "subject": "SSL物理",
-                    "time": "4",
+                    "time": "7, 8",
                     "teacher": "小久保・浦家・松崎・梅津・佐藤潤",
                     "room": "応用物理実験室"
                 }
@@ -438,25 +438,25 @@
             [
                 {
                     "subject": "国語",
-                    "time": "1",
+                    "time": "1, 2",
                     "teacher": "館下",
                     "room": "HR教室"
                 },
                 {
                     "subject": "英語",
-                    "time": "2",
+                    "time": "3, 4",
                     "teacher": "片岡",
                     "room": "HR教室"
                 },
                 {
                     "subject": "数学A",
-                    "time": "3",
+                    "time": "5, 6",
                     "teacher": "山崎",
                     "room": "HR教室"
                 },
                 {
                     "subject": "物理B",
-                    "time": "4",
+                    "time": "7, 8",
                     "teacher": "小久保",
                     "room": "HR教室"
                 }
@@ -464,25 +464,25 @@
             [
                 {
                     "subject": "UNIX基礎",
-                    "time": "1",
+                    "time": "1, 2",
                     "teacher": "土江田・林岳",
                     "room": "情報処理実験室"
                 },
                 {
                     "subject": "数学A",
-                    "time": "2",
+                    "time": "3, 4",
                     "teacher": "山崎",
                     "room": "HR教室"
                 },
                 {
                     "subject": "歴史・地理総合",
-                    "time": "3",
+                    "time": "5, 6",
                     "teacher": "瀧川",
                     "room": "HR教室"
                 },
                 {
                     "subject": "国語",
-                    "time": "4",
+                    "time": "7, 8",
                     "teacher": "館下",
                     "room": "HR教室"
                 }
@@ -490,25 +490,25 @@
             [
                 {
                     "subject": "物理A",
-                    "time": "1",
+                    "time": "1, 2",
                     "teacher": "松崎",
                     "room": "HR教室"
                 },
                 {
                     "subject": "化学",
-                    "time": "2",
+                    "time": "3, 4",
                     "teacher": "佐藤潤",
                     "room": "HR教室"
                 },
                 {
                     "subject": "プログラミング言語1",
-                    "time": "3",
+                    "time": "5, 6",
                     "teacher": "高橋晃・鈴木未",
                     "room": "情報処理実験室"
                 },
                 {
                     "subject": "SSL数学",
-                    "time": "4",
+                    "time": "7, 8",
                     "teacher": "小谷恭",
                     "room": "ラボA"
                 }
@@ -539,7 +539,7 @@
                 },
                 {
                     "subject": "HR",
-                    "time": "4",
+                    "time": "7",
                     "teacher": "中井",
                     "room": "HR教室"
                 }
@@ -565,7 +565,7 @@
                 },
                 {
                     "subject": "SSL物理",
-                    "time": "4",
+                    "time": "7, 8",
                     "teacher": "小久保・浦家・松崎・梅津・佐藤潤",
                     "room": "応用物理実験室"
                 }
@@ -637,7 +637,7 @@
                 },
                 {
                     "subject": "SSL数学",
-                    "time": "4",
+                    "time": "7, 8",
                     "teacher": "小谷恭",
                     "room": "ラボA"
                 }
