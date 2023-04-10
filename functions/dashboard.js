@@ -45,8 +45,10 @@ function diffInMonthsAndDays(from, to) {
 
 exports.generation = async function func(guild) {
     /*現在時刻を取得*/
-    const date = new Date();
-    const time = date.toFormat('YYYY年 MM月DD日 HH24:MI:SS')
+    const moment = require('moment-timezone');
+    const date = moment();
+    const time = date.tz('Asia/Tokyo').format('YYYY年 MM月DD日 HH:mm:ss');
+
 
     /*bot及びユーザーの人数を取得*/
     const members = await guild.members.fetch({withPresences: true});
