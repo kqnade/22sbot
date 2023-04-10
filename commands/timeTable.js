@@ -118,33 +118,35 @@ module.exports = [
         async execute(interaction) {
             //overwrite config json file
             //if 分野 value is "M"
+
             const data = JSON.parse(fs.readFileSync(configPath, 'utf8'))  //ここで読み取り
-            if (interaction.options.getString("分野") === "M") {
-                const channelID = interaction.options.getChannel("channel").id
-                data.timetableChannel.M = channelID
-                fs.writeFileSync(configPath, JSON.stringify(data)) //ここで書き出し
-                await interaction.reply({ content: "時間割を送信するチャンネルを<#" + channelID + ">に設定しました", ephemeral: true });
-            } else if (interaction.options.getString("分野") === "E") {
-                const channelID = interaction.options.getChannel("channel").id
-                data.timetableChannel.E = channelID
-                fs.writeFileSync(configPath, JSON.stringify(data)) //ここで書き出し
-                await interaction.reply({ content: "時間割を送信するチャンネルを<#" + channelID + ">に設定しました", ephemeral: true });
-            } else if (interaction.options.getString("分野") === "D") {
-                const channelID = interaction.options.getChannel("channel").id
-                data.timetableChannel.D = channelID
-                fs.writeFileSync(configPath, JSON.stringify(data)) //ここで書き出し
-                await interaction.reply({ content: "時間割を送信するチャンネルを<#" + channelID + ">に設定しました", ephemeral: true });
-            } else if (interaction.options.getString("分野") === "J") {
-                const channelID = interaction.options.getChannel("channel").id
-                data.timetableChannel.J = channelID
-                fs.writeFileSync(configPath, JSON.stringify(data)) //ここで書き出し
-                await interaction.reply({ content: "時間割を送信するチャンネルを<#" + channelID + ">に設定しました", ephemeral: true });
-            } else if (interaction.options.getString("分野") === "A") {
-                const channelID = interaction.options.getChannel("channel").id
-                data.timetableChannel.A = channelID
-                fs.writeFileSync(configPath, JSON.stringify(data)) //ここで書き出し
-                await interaction.reply({ content: "時間割を送信するチャンネルを<#" + channelID + ">に設定しました", ephemeral: true });
-            }    
+            const channelID = interaction.options.getChannel("channel").id
+
+            switch (interaction.options.getString("分野")) {
+                case "M":
+                    data.timetableChannel.M = channelID,
+                    fs.writeFileSync(configPath, JSON.stringify(data)) //ここで書き出し
+                    break;
+                case "E":
+                    data.timetableChannel.E = channelID
+                    fs.writeFileSync(configPath, JSON.stringify(data)) //ここで書き出し
+                    break;
+                case "D":
+                    data.timetableChannel.D = channelID
+                    fs.writeFileSync(configPath, JSON.stringify(data)) //ここで書き出し
+                    break;
+                case "J":
+                    data.timetableChannel.J = channelID
+                    fs.writeFileSync(configPath, JSON.stringify(data)) //ここで書き出し
+                    break;
+                case "A":
+                    data.timetableChannel.A = channelID
+                    fs.writeFileSync(configPath, JSON.stringify(data)) //ここで書き出し
+                    break;
+            }
+            
+            await interaction.reply({ content: "時間割を送信するチャンネルを<#" + channelID + ">に設定しました", ephemeral: true });
+            
         }
 
 
