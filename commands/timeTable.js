@@ -1,7 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js')
 
 const  timetableBuilder  = require('../timetable/timetableUtils')
-const Classes = require('../timetable/timetables.json')
 const fs = require('fs');
 const {configPath}=require("../environmentConfig")
 module.exports = [
@@ -38,6 +37,9 @@ module.exports = [
 
         async execute(interaction) {
 
+            // get strings from options 分野
+            const bunya = interaction.options.getString('分野');
+            // get strings from options 曜日
             let dt = new Date();
             let dayOfWeek = dt.getDay();
             let hours = dt.getHours();
@@ -60,8 +62,9 @@ module.exports = [
                 }
             }
             
-
-            const embed = timetableBuilder(interaction.options.getString('分野'),dayOfWeek);
+            // make timetable embed with timetableBuilder
+            
+            const embed = timetableBuilder(bunya, dayOfWeek);
 
 
             await interaction.reply({ embeds: [embed] });

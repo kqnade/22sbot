@@ -1,5 +1,5 @@
-const classValue = '1';
-const dayOfWeek = 1;
+const classValue = 'J';
+const dayOfWeek = 2;
 
 
 const timetableData = require('./timetable/timetables.json');
@@ -13,7 +13,7 @@ console.log(dayOfWeek);
 if (!classTimetables) {
     console.log('指定されたクラスに対応するデータがありません');
 } else {
-    const timetable = classTimetables.timetables[0];
+    const timetable = classTimetables.timetables[dayOfWeek - 1];
     if (!timetable) {
         console.log('指定された曜日に対応するデータがありません');
     } else {
