@@ -80,7 +80,7 @@ exports.generation = async function func(guild) {
     /*定期テスト*/
     const data = JSON.parse(fs.readFileSync(configPath, 'utf8'))
     let test, UNIXtest, testStart, testEnd;
-    let now = Date.now() + 32400000;
+    let now = new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' });
     if (data.nextTest[0][0] === 0) {
         test = "現在設定されている次のテストはありません。"
         for (let i = 0; i < 3; i++) {
