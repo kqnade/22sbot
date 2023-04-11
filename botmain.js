@@ -93,29 +93,32 @@ cron.schedule('*/1  * * * *', async () => {
         .catch((error) => {
             console.error(`メッセージID ${messageId} のダッシュボードを取得できませんでした: ${error}`);
         });
+});
 
+cron.schedule('0 20 * * *', async() => {
+    const data = JSON.parse(fs.readFileSync(configPath, 'utf8'))
     //時間割の送信
     let dayOfWeek = new Date().getDay() + 1;
     console.log(data.timetable);
     if (data.timetable === true) {
         const channelm = client.channels.cache.get(data.Mchannel);
-        const embedm = timetableBuilder(Classes.M, dayOfWeek);
+        const embedm = timetableBuilder("M", dayOfWeek);
         await channelm.send({ embeds: [embedm] });
 
         const channele = client.channels.cache.get(data.Echannel);
-        const embede = timetableBuilder(Classes.E, dayOfWeek);
+        const embede = timetableBuilder("E", dayOfWeek);
         await channele.send({ embeds: [embede] });
 
         const channeld = client.channels.cache.get(data.Dchannel);
-        const embedd = timetableBuilder(Classes.D, dayOfWeek);
+        const embedd = timetableBuilder("D", dayOfWeek);
         await channeld.send({ embeds: [embedd] });
 
         const channelj = client.channels.cache.get(data.Jchannel);
-        const embedj = timetableBuilder(Classes.J, dayOfWeek);
+        const embedj = timetableBuilder("J", dayOfWeek);
         await channelj.send({ embeds: [embedj] });
 
         const channela = client.channels.cache.get(data.Achannel);
-        const embeda = timetableBuilder(Classes.A, dayOfWeek);
+        const embeda = timetableBuilder("A", dayOfWeek);
         await channela.send({ embeds: [embeda] });
 
         console.log("timetable sent");

@@ -4,6 +4,27 @@ const axios = require('axios');
 const { max } = require("moment/moment");
 
 
+function getMaxRainChance(forecast) {
+  // 6時間ごとの降水確率の配列を作成する
+  const rainChances = [
+    forecast.chanceOfRain.T00_06,
+    forecast.chanceOfRain.T06_12,
+    forecast.chanceOfRain.T12_18,
+    forecast.chanceOfRain.T18_24,
+  ];
+
+    const maxPercentage = Math.max(
+  ...rainChances.map(p => {
+    const percentage = parseInt(p);
+    return Number.isNaN(percentage) ? -Infinity : percentage;
+  })
+);    
+
+    return maxPercentage;
+
+} 
+
+
 async function getWeather() {
     const response = await fetch('https://weather.tsukumijima.net/api/forecast/city/015010');
     const data = await response.json();
@@ -46,7 +67,9 @@ function diffInMonthsAndDays(from, to) {
 exports.generation = async function func(guild) {
     /*現在時刻を取得*/
     const date = new Date();
-    const time = date.toFormat('YYYY年 MM月DD日 HH24:MI:SS')
+    const time = date.toFormat('YYYY年 MM月DD日 HH24:MI:SS').toLocaleString({ timeZone: 'Asia/Tokyo' });
+
+    
 
     /*bot及びユーザーの人数を取得*/
     const members = await guild.members.fetch({withPresences: true});
@@ -57,7 +80,7 @@ exports.generation = async function func(guild) {
     /*定期テスト*/
     const data = JSON.parse(fs.readFileSync(configPath, 'utf8'))
     let test, UNIXtest, testStart, testEnd;
-    let now = Date.now() + 32400000;
+    let now = new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' });
     if (data.nextTest[0][0] === 0) {
         test = "現在設定されている次のテストはありません。"
         for (let i = 0; i < 3; i++) {
@@ -121,7 +144,7 @@ exports.generation = async function func(guild) {
         const today = weatherData.forecasts[0];
         const tomorrow = weatherData.forecasts[1];
         
-        const now = today.detail.weather || '--';
+
         const todayMax = today.temperature.max.celsius || '--';
         const todayMin = today.temperature.min.celsius || '--';
         const todayWeather = today.telop || '--';
@@ -129,6 +152,7 @@ exports.generation = async function func(guild) {
         const todayRain612 = today.chanceOfRain.T06_12 || '--';
         const todayRain1218 = today.chanceOfRain.T12_18 || '--';
         const todayRain1824 = today.chanceOfRain.T18_24 || '--';
+        const todayMaxRainChance = getMaxRainChance(today);
 
         const tomorrowMax = tomorrow.temperature.max.celsius || '--';
         const tomorrowMin = tomorrow.temperature.min.celsius || '--';
@@ -137,8 +161,9 @@ exports.generation = async function func(guild) {
         const tomorrowRain612 = tomorrow.chanceOfRain.T06_12 || '--';
         const tomorrowRain1218 = tomorrow.chanceOfRain.T12_18 || '--';
         const tomorrowRain1824 = tomorrow.chanceOfRain.T18_24 || '--';
+        const tomorrowMaxRainChance = getMaxRainChance(tomorrow);
 
-        weather = `今日の天気：${todayWeather}\n最高気温：${todayMax}℃ 最低気温：${todayMin}℃ \n降水確率(6時間毎)：${todayRain06}% / ${todayRain612}% / ${todayRain1218} / ${todayRain1824}\n\n明日の天気：${tomorrowWeather}\n最高気温：${tomorrowMax}℃ 最低気温：${tomorrowMin}℃ \n降水確率(6時間毎)：${tomorrowRain06} / ${tomorrowRain612} / ${tomorrowRain1218} / ${tomorrowRain1824}\n\n発表時刻：${weatherData.publicTimeFormatted}`;
+        weather = `今日の天気：${todayWeather}\n最高気温：${todayMax}℃ 最低気温：${todayMin}℃ \n降水確率：${todayMaxRainChance}% (${todayRain06} / ${todayRain612} / ${todayRain1218} / ${todayRain1824})\n\n明日の天気：${tomorrowWeather}\n最高気温：${tomorrowMax}℃ 最低気温：${tomorrowMin}℃ \n降水確率：${tomorrowMaxRainChance}% (${tomorrowRain06} / ${tomorrowRain612} / ${tomorrowRain1218} / ${tomorrowRain1824})\n\n発表時刻：${weatherData.publicTimeFormatted}`;
     }
     fs.writeFileSync(configPath, JSON.stringify(data, null, "\t"))
     return [
