@@ -42,18 +42,10 @@ module.exports = [
       const bunya = interaction.options.getString("分野");
       // get strings from options 曜日
       let dt = new Date();
+      let parsedDayOfWeek = parseInt(interaction.options.getString("曜日"));
       let dayOfWeek = dt.getDay();
-      let hours = dt.getHours();
-      if (interaction.options.getString("曜日") === "1") {
-        dayOfWeek = 1;
-      } else if (interaction.options.getString("曜日") === "2") {
-        dayOfWeek = 2;
-      } else if (interaction.options.getString("曜日") === "3") {
-        dayOfWeek = 3;
-      } else if (interaction.options.getString("曜日") === "4") {
-        dayOfWeek = 4;
-      } else if (interaction.options.getString("曜日") === "5") {
-        dayOfWeek = 5;
+      if (!isNaN(parsedDayOfWeek) && dayOfWeek >= 1 && dayOfWeek <= 5) {
+        dayOfWeek = parsedDayOfWeek;
       } else {
         if (hours >= 17) {
           dayOfWeek += 1;
