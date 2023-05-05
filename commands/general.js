@@ -41,8 +41,7 @@ module.exports = [
         .setTitle("NITKC統合管理BOT概要")
         .setAuthor({
           name: "釧路高専22s統合管理BOT",
-          iconURL:
-            "https://cdn.discordapp.com/attachments/1094104877266894868/1094124874844356608/Orange_Modern_Logo.png",
+          iconURL: "https://i.imgur.com/d9hJ7mQ.png",
           url: "https://github.com/kqnade/22sbot",
         })
         .setDescription("このbotの概要を紹介します")

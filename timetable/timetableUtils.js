@@ -27,11 +27,9 @@ module.exports = function timetableBuilder(classValue, dayOfWeek) {
     .setColor(0x00bfff)
     .setTitle(`${classTimetables.name} 時間割`)
     .setDescription(
-      `${dayOfWeeks[dayOfWeek]}の時間割です。\n※休講や、授業変更等がある可能性があります。各自で確認してください`
+      `${dayOfWeeks[dayOfWeek]}の時間割です。\n※休講や、授業変更等がある可能性があります。`
     )
-    .setThumbnail(
-      "https://cdn.discordapp.com/attachments/1094104877266894868/1094124874844356608/Orange_Modern_Logo.png"
-    )
+    .setThumbnail("https://i.imgur.com/d9hJ7mQ.png")
     .setTimestamp();
 
   timetable.forEach(({ subject, time, teacher, room }) => {
