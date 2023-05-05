@@ -162,7 +162,9 @@ exports.generation = async function func(guild) {
   const diff = nextApril.getTime() - nowDate.getTime();
   const progress = Math.floor((1 - diff / 31536000000) * 100);
   // make progress bar
-  const bar1 = "▓".repeat(Math.floor(progress / 5)) + "░".repeat(20 - Math.floor(progress / 5));
+  const bar1 =
+    "▓".repeat(Math.floor(progress / 5)) +
+    "░".repeat(20 - Math.floor(progress / 5));
   // set bar to progressbar and percentage
   const bar = `${bar1} ${progress}%`;
 
