@@ -8,3 +8,5 @@ yarn.lock
 /CCConfig.json
 /.fleet/settings.json
 /.vscode/*
+/testing_field/
+/testing_field/*
