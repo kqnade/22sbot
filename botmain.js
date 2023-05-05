@@ -42,9 +42,7 @@ client.once("ready", async () => {
       client.commands.set(command[i].data.name, command[i]);
     }
   }
-  client.user.setActivity("/help | 釧路高専22s", {
-    type: ActivityType.Playing,
-  });
+  client.user.setActivity("/help | 釧路高専22s", {type: ActivityType.Playing});
   console.log("Ready!");
 });
 
