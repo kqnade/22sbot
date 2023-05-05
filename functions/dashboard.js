@@ -154,31 +154,17 @@ exports.generation = async function func(guild) {
     }
   }
 
-  /*今年度進捗*/
-  // 今日が1月から3月ならば
-  if (date.getMonth() < 3) {
-    // 今から3月末日までのミリ秒を取得
-    const endOfMarch = new Date(date.getFullYear(), 3, 0).getTime();
-  } else {
-    // 年末までのミリ秒を取得
-    const endOfYear = new Date(date.getFullYear(), 12, 0).getTime();
-    //年末までのミリ秒に3ヶ月分のミリ秒を追加
-    const endOfMarch = endOfYear + 7776000000;
-  }
-  // 一年分のミリ秒とendOfMarchの差を取得
-  const yearProgress = endOfMarch - 31536000000;
-  // 一年分のミリ秒とyearProgressから今年度の進捗を#と-で生成、進捗バーとパーセント表示で取得
-  const progress = Math.floor(
-    (31536000000 - yearProgress) / 31536000000 * 100
-  );
-  const progressBar = `#${"-".repeat(progress)}${" ".repeat(
-    100 - progress
-  )}# ${progress}%`;
-
-  const displayBar = progressBar + '[' + progress + '%]';
-
-    
-
+  /*今年度残り日数計算*/
+  // get milliseconds to next April 1st
+  // and calc progress with parcentage
+  const nowDate = new Date();
+  const nextApril = new Date(nowDate.getFullYear() + 1, 3, 1);
+  const diff = nextApril.getTime() - nowDate.getTime();
+  const progress = Math.floor((1 - diff / 31536000000) * 100);
+  // make progress bar
+  const bar1 = "▓".repeat(Math.floor(progress / 5)) + "░".repeat(20 - Math.floor(progress / 5));
+  // set bar to progressbar and percentage
+  const bar = `${bar1} ${progress}%`;
 
   /*天気取得*/
   const weatherData = await getWeather();
@@ -224,8 +210,8 @@ exports.generation = async function func(guild) {
       value: `\`\`\`${test}\`\`\``,
     },
     {
-      name: "今年度残り",
-      value: `\`\`\`\n${displayBar}\`\`\``,
+      name: "今年度進捗",
+      value: `\`\`\`\n${bar}\`\`\``,
     },
     {
       name: "釧路の天気(Powered by 気象庁)",
