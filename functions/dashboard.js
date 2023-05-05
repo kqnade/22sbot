@@ -24,7 +24,7 @@ function getMaxRainChance(forecast) {
 
 async function getWeather() {
   const response = await fetch(
-    "https://weather.tsukumijima.net/api/forecast/city/015010"
+    "https://weather.tsukumijima.net/api/forecast/city/014020"
   );
   const data = await response.json();
   return data;
