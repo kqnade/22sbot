@@ -1,15 +1,4 @@
-const {
-  Client,
-  GatewayIntentBits,
-  Partials,
-  Collection,
-  EmbedBuilder,
-  Events,
-  ActionRowBuilder,
-  StringSelectMenuBuilder,
-  MessageEmbed,
-  ActivityType,
-} = require("discord.js");
+const {Client, GatewayIntentBits, Partials, Collection, EmbedBuilder, Events, ActionRowBuilder, StringSelectMenuBuilder, MessageEmbed, ActivityType} = require("discord.js");
 const config = require("./environmentConfig");
 const timetableBuilder = require("./timetable/timetableUtils");
 const timetableData = require("./timetable/timetables.json");
