@@ -8,6 +8,7 @@ const {
   ActionRowBuilder,
   StringSelectMenuBuilder,
   MessageEmbed,
+  ActivityType,
 } = require("discord.js");
 const config = require("./environmentConfig");
 const timetableBuilder = require("./timetable/timetableUtils");
@@ -52,6 +53,9 @@ client.once("ready", async () => {
       client.commands.set(command[i].data.name, command[i]);
     }
   }
+  client.user.setActivity("/help | 釧路高専22s", {
+    type: ActivityType.Playing,
+  });
   console.log("Ready!");
 });
 
