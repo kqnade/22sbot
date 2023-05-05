@@ -100,9 +100,7 @@ cron.schedule("*/1  * * * *", async () => {
       console.log("dashboard updated");
     })
     .catch((error) => {
-      console.error(
-        `メッセージID ${messageId} のダッシュボードを取得できませんでした: ${error}`
-      );
+      console.error(`メッセージID ${messageId} のダッシュボードを取得できませんでした: ${error}`);
     });
 });
 
