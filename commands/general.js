@@ -16,7 +16,7 @@ module.exports = [
         .setAuthor({
           name: "釧路高専22s統合管理BOT",
           iconURL:
-            "https://cdn.discordapp.com/attachments/1094104877266894868/1094124874844356608/Orange_Modern_Logo.png",
+            "https://i.imgur.com/d9hJ7mQ.png",
           url: "https://github.com/kqnade/22sbot",
         })
         .setDescription("現在実装されているコマンド一覧です")

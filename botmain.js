@@ -1,15 +1,4 @@
-const {
-  Client,
-  GatewayIntentBits,
-  Partials,
-  Collection,
-  EmbedBuilder,
-  Events,
-  ActionRowBuilder,
-  StringSelectMenuBuilder,
-  MessageEmbed,
-  ActivityType,
-} = require("discord.js");
+const {Client, GatewayIntentBits, Partials, Collection, EmbedBuilder, Events, ActionRowBuilder, StringSelectMenuBuilder, MessageEmbed, ActivityType} = require("discord.js");
 const config = require("./environmentConfig");
 const timetableBuilder = require("./timetable/timetableUtils");
 const timetableData = require("./timetable/timetables.json");
@@ -53,9 +42,7 @@ client.once("ready", async () => {
       client.commands.set(command[i].data.name, command[i]);
     }
   }
-  client.user.setActivity("/help | 釧路高専22s", {
-    type: ActivityType.Playing,
-  });
+  client.user.setActivity("/help | 釧路高専22s", {type: ActivityType.Playing});
   console.log("Ready!");
 });
 
@@ -113,9 +100,7 @@ cron.schedule("*/1  * * * *", async () => {
       console.log("dashboard updated");
     })
     .catch((error) => {
-      console.error(
-        `メッセージID ${messageId} のダッシュボードを取得できませんでした: ${error}`
-      );
+      console.error(`メッセージID ${messageId} のダッシュボードを取得できませんでした: ${error}`);
     });
 });
 
