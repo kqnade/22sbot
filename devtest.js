@@ -13,15 +13,7 @@ console.log(dayOfWeek);
 timetableBuilder2("M", 1);
 
 const { EmbedBuilder } = require("discord.js");
-const dayOfWeeks = [
-  "日曜日",
-  "月曜日",
-  "火曜日",
-  "水曜日",
-  "木曜日",
-  "金曜日",
-  "土曜日",
-];
+const dayOfWeeks = ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"];
 function timetableBuilder2(classValue, dayOfWeek) {
   const timetableData = require("./timetable/timetables.json");
   const classTimetables = timetableData[classValue];
